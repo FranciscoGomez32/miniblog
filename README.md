@@ -75,3 +75,18 @@ revisión; después entra como `docente.demo` (o como administrador), revísala 
 
 > **Importante:** borra estos usuarios (en `/admin/users/`, como administrador) o cambia su contraseña
 > antes de publicar el blog en internet. Contraseñas conocidas en un servidor público son un riesgo.
+
+## Cómo he desplegado el proyecto
+
+### Entorno
+- Debian en máquina virtual, PHP 8.4, Composer, Git y autenticación por SSH.
+
+### Comandos usados
+- `git clone git@github.com:FranciscoGomez32/miniblog.git`
+- `composer install`
+- `php bin/console create-schema`
+- `php bin/console app:create-user admin "Administrador"`
+- `php -S localhost:8000 -t public`
+
+### Problemas que me han surgido
+- GitHub rechazaba mi clave SSH ("Key is invalid") porque me había equivocado al pegar la clave.
